@@ -32,3 +32,18 @@ function mostrarSeccion(id) {
 document.addEventListener('DOMContentLoaded', () => {
   mostrarSeccion('inicio');
 });
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  // opcional: cerrar el menú al hacer click en un link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+  });
+}

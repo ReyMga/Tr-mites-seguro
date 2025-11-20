@@ -697,14 +697,31 @@ p, a, li, span {
     gap: 0.8rem;
   }
 
-  .nav {
-    display: none; /* si querés, después hacemos menú hamburguesa */
+  @media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 5.5rem;
+  }
+
+  .header-inner {
+    gap: 0.8rem;
   }
 
   .cta-inner {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Ocultar menú original en mobile */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
 }
 .footer-modern {
   position: relative;
@@ -818,4 +835,78 @@ p, a, li, span {
 .nautica-card:hover::before {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+/* Botón hamburguesa oculto en escritorio */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 20px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #050509;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+    gap: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: none;             /* OCULTO por defecto */
+  }
+
+  .nav-links a {
+    width: 100%;
+  }
+
+  .nav-toggle {
+    display: flex;             /* mostramos el botón */
+  }
+
+  /* Cuando el menú está abierto */
+  .nav-links.open {
+    display: flex;
+  }
+}
+/* ===== AJUSTES SOLO PARA ESCRITORIO (MENÚ) ===== */
+@media (min-width: 769px) {
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;          /* un poco de aire entre logo y menú */
+  }
+
+  .logo-area {
+    flex-shrink: 0;     /* que el logo no se achique ni pise el menú */
+  }
+
+  .nav {
+    margin-left: auto;  /* empuja el menú hacia la derecha */
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;        /* más separación entre las opciones del menú */
+    flex-wrap: nowrap;  /* que no se bajen de renglón en escritorio */
+  }
+
+  .nav a {
+    white-space: nowrap; /* evita que "Trámite Seguro" o textos largos se corten en dos líneas */
+  }
 }
