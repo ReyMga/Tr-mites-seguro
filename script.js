@@ -14,6 +14,7 @@ document.querySelectorAll(".nav a").forEach((link) => {
     scrollToSection(id);
   });
 });
+
 function mostrarSeccion(id) {
   const secciones = document.querySelectorAll('.page-section');
 
@@ -28,22 +29,19 @@ function mostrarSeccion(id) {
   }
 }
 
-// Al cargar la página, mostramos solo INICIO
-document.addEventListener('DOMContentLoaded', () => {
-  mostrarSeccion('inicio');
-});
+/* === MENÚ HAMBURGUESA === */
 const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
+const nav = document.querySelector('.nav');
 
-if (navToggle && navLinks) {
+if (navToggle && nav) {
   navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+    nav.classList.toggle('is-open');
   });
 
-  // opcional: cerrar el menú al hacer click en un link
-  navLinks.querySelectorAll('a').forEach(link => {
+  // Cerrar menú al tocar un link
+  nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
+      nav.classList.remove('is-open');
     });
   });
 }

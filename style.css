@@ -29,7 +29,7 @@ a {
 }
 
 .logo {
-    width: 60px;        /* Ajustá el tamaño que quieras */
+    width: 100px;        /* Ajustá el tamaño que quieras */
     height: auto;       /* Mantiene proporción */
     margin-left: 20px;  /* Separación opcional del borde */
     margin-top: 10px;
@@ -1054,6 +1054,138 @@ p, a, li, span {
   .contact-wrapper {
     flex-direction: column;
   }
+.logo {
+    width: 60px;        /* Ajustá el tamaño que quieras */
+}
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+/* ===========================
+   📱 RESPONSIVE MOBILE (≤768px)
+   =========================== */
+
+@media (max-width: 768px) {
+
+  /* --- HEADER --- */
+  .header {
+    padding: 18px 0;
+  }
+
+  .logo {
+    width: 60px !important;
+    margin-left: 10px;
+  }
+
+  /* Ocultar menú normal */
+  .nav {
+    display: none !important;
+  }
+
+  /* Menú mobile abierto */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(5,5,9,0.98);
+    backdrop-filter: blur(8px);
+    padding: 1rem 1.5rem;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Hamburguesa visible */
+  .nav-toggle {
+    display: flex !important;
+    margin-right: 20px;
+  }
+
+  /* --- HERO --- */
+  .hero {
+    min-height: 80vh;
+    padding: 5rem 1.3rem 3rem;
+  }
+
+  .hero-content {
+    margin-left: 0 !important;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- SECCIONES GENERAL --- */
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  /* --- CARTAS Y GRIDS --- */
+  .cards,
+  .security-grid,
+  .nautica-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+
+  .card,
+  .security-card,
+  .nautica-card {
+    max-width: 100%;
+  }
+
+  /* --- NOSOTROS --- */
+  #nosotros.section {
+    padding: 2rem 1.2rem;
+  }
+
+  .text-card {
+    padding: 20px;
+  }
+
+  /* --- ABOUT --- */
+  .about-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+
+  .about-image {
+    order: -1;
+  }
+
+  /* --- CONTACTO --- */
+  .contact-wrapper {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
 
   .contact-form {
     max-width: 100%;
@@ -1061,5 +1193,124 @@ p, a, li, span {
 
   .form-row {
     flex-direction: column;
+  }
+
+  /* --- CTA FINAL --- */
+  .cta-inner {
+    flex-direction: column;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  /* --- FOOTER --- */
+  .footer-wrapper {
+    flex-direction: column;
+    gap: 25px;
+    text-align: left;
+  }
+
+  .footer-modern {
+    padding: 40px 20px;
+  }
+}
+/* ===================== */
+/* MENÚ MOBILE FORZADO   */
+/* ===================== */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 70px;              /* debajo del header */
+    left: 0;
+    right: 0;
+    background: #050509;
+    display: none;          /* oculto por defecto */
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav.is-open {
+    display: flex;          /* se muestra cuando el JS agrega la clase */
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
+  }
+}
+
+/* En escritorio ocultamos el hamburguesa */
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+/* ========================= */
+/* MENÚ HAMBURGUESA MOBILE   */
+/* ========================= */
+@media (max-width: 768px) {
+  /* Ocultamos el menú por defecto en mobile */
+  .nav {
+    position: absolute !important;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #050509;
+    display: none !important;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 99;
+  }
+
+  /* Cuando JS agrega la clase, lo mostramos */
+  .nav.is-open {
+    display: flex !important;
+  }
+
+  .nav a {
+    padding: 0.25rem 0;
+  }
+
+  /* Botón hamburguesa visible en mobile */
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
+  }
+}
+
+/* En escritorio ocultamos el hamburguesa y dejamos el menú normal */
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row;
+    gap: 2rem;
   }
 }
