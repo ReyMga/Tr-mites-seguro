@@ -44,21 +44,25 @@ if (form) {
 
 /* ===== MENÚ HAMBURGUESA ===== */
 const navToggle = document.querySelector(".nav-toggle");
-const navLinks = document.querySelector(".nav-links");
+const nav = document.querySelector(".nav.nav-links");  // ← CORREGIDO
 
-if (navToggle && navLinks) {
+if (navToggle && nav) {
   navToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
+    nav.classList.toggle("open");
+    navToggle.classList.toggle("is-open");
+    document.body.classList.toggle("menu-open");
   });
 
-  navLinks.querySelectorAll("a").forEach((link) => {
+  nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      navLinks.classList.remove("open");
+      nav.classList.remove("open");
+      navToggle.classList.remove("is-open");
+      document.body.classList.remove("menu-open");
     });
   });
 }
 
-/* ===== TRENSICION ENTRE SECCIONES ===== */
+/* ===== TRANSICIÓN ENTRE SECCIONES ===== */
 function mostrarSeccion(id) {
   const secciones = document.querySelectorAll(".page-section");
 
