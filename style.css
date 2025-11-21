@@ -1314,3 +1314,68 @@ p, a, li, span {
     gap: 2rem;
   }
 }
+/* POPUP DE ÉXITO */
+.success-popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #4fd0ff, #8a7dff);
+  color: #020308;
+  padding: 18px 28px;
+  border-radius: 18px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  box-shadow: 0 0 25px rgba(79, 208, 255, 0.6);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.5s ease;
+  z-index: 9999;
+}
+
+/* Cuando aparece */
+.success-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .success-popup {
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    text-align: center;
+  }
+}
+.success-popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #4fd0ff, #8a7dff);
+  color: #020308;
+  padding: 18px 28px;
+  border-radius: 18px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  box-shadow: 0 0 25px rgba(79, 208, 255, 0.6);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.5s ease;
+  z-index: 9999;
+}
+
+.success-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .success-popup {
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    text-align: center;
+  }
+}
