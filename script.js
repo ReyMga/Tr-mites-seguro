@@ -76,3 +76,7 @@ function mostrarSeccion(id) {
     window.scrollTo({ top: 0, behavior: "auto" });
   }
 }
+/* ===== MOSTRAR INICIO AL CARGAR ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  mostrarSeccion("inicio");
+});

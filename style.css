@@ -10,6 +10,15 @@ body {
   font-weight: 300;
   color: #f5f5f5;
 }
+/* Por defecto, oculto TODAS las secciones de página */
+.page-section {
+  display: none;
+}
+
+/* Solo muestro INICIO al cargar la web */
+#inicio {
+  display: block;
+}
 
 img {
   max-width: 100%;
@@ -144,7 +153,6 @@ a {
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
 }
-
 
 #inicio .hero-content {
   position: relative;
@@ -1758,231 +1766,10 @@ span {
     text-shadow: 0 0 6px rgba(0, 255, 255, 0.5);
   }
 }
-/* ================= ELEGANTE MOBILE ================= */
-@media (max-width: 768px) {
-
-  /* ----- 0. Fix general para que los anchors no escondan los títulos ----- */
-  .page-section {
-    scroll-margin-top: 110px; /* espacio para el header fijo */
-  }
-
-  /* ================= HERO (INICIO) ================= */
-  #inicio.hero {
-    position: relative;
-    min-height: 82vh;                    /* ya no tan alta */
-    display: flex;
-    align-items: flex-end;
-    padding: 120px 1.75rem 2.75rem;      /* deja lugar al header + aire abajo */
-    background-size: cover;
-    background-position: center top;
-  }
-
-  /* degradado elegante sobre la foto */
-  #inicio.hero .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.15) 0%,
-      rgba(0, 0, 0, 0.45) 35%,
-      rgba(0, 0, 0, 0.92) 100%
-    );
-    z-index: 0;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 330px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .hero-content h1 {
-    font-size: 1.9rem;
-    line-height: 1.25;
-    margin-bottom: 0.8rem;
-  }
-
-  .hero-content p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1.6rem;
-  }
-
-  .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-    align-items: center;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-    max-width: 260px;
-    padding: 0.85rem 1.4rem;
-    border-radius: 999px;
-    font-size: 0.95rem;
-  }
-
-  .hero-buttons .btn.btn-primary {
-    background: linear-gradient(135deg, #4cc9f0, #7b5cff);
-    color: #050509;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
-  }
-
-  .hero-buttons .btn.btn-outline {
-    background: rgba(0, 0, 0, 0.55);
-    border: 1px solid rgba(0, 255, 255, 0.45);
-    color: #f5f5f5;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
-  }
-
-  /* ================= SECCIONES BAJO EL HERO ================= */
-
-  .section {
-    padding: 3.75rem 1.5rem 3rem;
-    background: radial-gradient(circle at top,
-                rgba(0, 20, 40, 0.55),
-                #050509 55%);
-  }
-
-  /* centramos el contenido y lo hacemos más angosto (lectura mobile) */
-  .section .container,
-  .section.about-section .text-card,
-  .contact-section .contact-wrapper {
-    max-width: 360px;
-    margin: 0 auto;
-  }
-
-  /* ---- Tarjetas tipo glass (Nosotros / Seguridad / Náutica / Contacto) ---- */
-
-  .about-section .text-card,
-  .security-section .security-card,
-  .nautica-section .nautica-card,
-  .contact-section .contact-text,
-  .contact-section .contact-form {
-    background: radial-gradient(circle at top left,
-                rgba(0, 255, 255, 0.06),
-                rgba(8, 8, 20, 0.92));
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow:
-      0 18px 40px rgba(0, 0, 0, 0.75),
-      0 0 16px rgba(0, 255, 255, 0.18);
-    padding: 1.5rem 1.4rem;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-  }
-
-  .about-section .text-card h2,
-  .security-section h2,
-  .nautica-section h2,
-  .contact-section h2 {
-    font-size: 1.4rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .about-section .text-card p,
-  .security-section p,
-  .nautica-section p,
-  .contact-section p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  /* grid de seguridad/naútica en una sola columna prolija */
-  .security-grid,
-  .nautica-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.4rem;
-  }
-
-  /* CTA de seguridad/naútica centrada */
-  .security-cta,
-  .nautica-cta {
-    margin-top: 1.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: center;
-  }
-
-  .security-cta .btn,
-  .nautica-cta .btn {
-    width: 100%;
-    max-width: 260px;
-    border-radius: 999px;
-  }
-
-  /* ----- Contacto: form + texto en columna ----- */
-  .contact-section .contact-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
-  }
-
-  .contact-form textarea,
-  .contact-form input {
-    border-radius: 12px;
-  }
-
-  /* CTA final también centrada y con estilo glass suave */
-  .section-cta .cta-inner {
-    max-width: 360px;
-    margin: 0 auto;
-    padding: 1.8rem 1.4rem;
-    border-radius: 22px;
-    background: radial-gradient(circle at top,
-                rgba(0, 255, 255, 0.06),
-                rgba(8, 8, 20, 0.96));
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow:
-      0 18px 40px rgba(0, 0, 0, 0.75),
-      0 0 16px rgba(0, 255, 255, 0.18);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  .section-cta .btn.btn-primary {
-    width: 100%;
-    max-width: 260px;
-    margin: 0 auto;
-    border-radius: 999px;
-  }
-}
-@media (max-width: 768px) {
-
-  /* Asegura que NINGUNA sección quede detrás del header */
-  .page-section {
-    padding-top: 120px !important;
-  }
-
-  /* Excepto el hero (inicio) que ya tiene su propio espacio */
-  #inicio.page-section {
-    padding-top: 140px !important;
-  }
-}
-/* ===== Más espacio debajo del header en la sección Nosotros ===== */
-@media (max-width: 768px) {
-
-  #nosotros.section {
-    padding-top: 160px !important; /* Subí o bajá este número a gusto */
-  }
-
-  /* Opcional: también separo un poco el título */
-  #nosotros h2 {
-    margin-top: 0 !important;
-    margin-bottom: 1.2rem;
-  }
-}
 
 /* Ajustar hero para que arranque más arriba en mobile */
 .hero {
-  padding-top: 40px;          /* antes seguro tenías algo como 120px o más */
+  padding-top: 40px; /* antes seguro tenías algo como 120px o más */
   padding-bottom: 60px;
   display: flex;
   flex-direction: column;
@@ -1994,7 +1781,7 @@ span {
 .hero::before {
   background-position: center top;
   background-size: cover;
-  height: 100%;               /* evita que se estire demasiado */
+  height: 100%; /* evita que se estire demasiado */
 }
 
 /* Contenedor del texto + botones */
@@ -2009,7 +1796,7 @@ span {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  align-items: center;        /* CENTRA horizontalmente */
+  align-items: center; /* CENTRA horizontalmente */
   width: 100%;
 }
 
@@ -2019,7 +1806,7 @@ span {
     padding-top: 20px;
   }
   .hero::before {
-    height: 85vh;             /* recorta la imagen desde arriba */
+    height: 85vh; /* recorta la imagen desde arriba */
   }
 }
 
@@ -2027,7 +1814,7 @@ span {
 @media (max-width: 768px) {
   /* La sección de inicio (hero) un poco más baja en mobile */
   #inicio.hero {
-    min-height: 75vh;      /* antes seguro estaba en 100vh */
+    min-height: 75vh; /* antes seguro estaba en 100vh */
   }
 
   .hero-content {
@@ -2061,7 +1848,7 @@ span {
 /* Contenedor de botones centrado */
 .hero-buttons {
   display: flex;
-  flex-direction: column;     /* uno abajo del otro en mobile */
+  flex-direction: column; /* uno abajo del otro en mobile */
   align-items: center;
   gap: 1rem;
   margin-top: 1.5rem;
@@ -2069,7 +1856,7 @@ span {
 
 /* Botones del mismo tamaño */
 .hero-buttons a {
-  width: 220px;               /* mismo ancho para ambos */
+  width: 220px; /* mismo ancho para ambos */
   text-align: center;
   display: inline-block;
 }
@@ -2077,8 +1864,8 @@ span {
 /* En desktop podés ponerlos uno al lado si querés */
 @media (min-width: 769px) {
   .hero-buttons {
-    flex-direction: row;       /* en fila */
-    justify-content: center;   /* centrados */
+    flex-direction: row; /* en fila */
+    justify-content: center; /* centrados */
   }
 }
 /* Mismo tamaño y alineación de los botones del hero */
@@ -2091,7 +1878,64 @@ span {
 
 .hero-buttons .btn,
 .hero-buttons .btn-outline {
-  min-width: 230px;      /* mismo ancho */
-  text-align: center;    /* texto centrado */
+  min-width: 230px; /* mismo ancho */
+  text-align: center; /* texto centrado */
   justify-content: center;
+}
+/* ===== PARCHE MOBILE MENÚ SIN ROMPER ESCRITORIO ===== */
+@media (max-width: 768px) {
+  /* Panel del menú hamburguesa: tapa toda la pantalla y no mezcla con las secciones */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 80px;
+
+    /* 🔹 Fondo translúcido tipo glass, no negro sólido */
+    background: rgba(5, 5, 9, 0.25);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .nav-links.open {
+    display: flex; /* se muestra solo cuando JS le agrega .open */
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 1.1rem 1.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* desactivamos rayitas decorativas viejas para que no hagan efectos raros */
+  .nav-links a::before,
+  .nav-links a::after {
+    content: none !important;
+  }
+
+  /* El header queda arriba del menú y no se pisa con el contenido */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+  }
+
+  /* Damos aire al contenido para que no quede escondido detrás del header */
+  .page-section {
+    padding-top: 110px;
+  }
 }

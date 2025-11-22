@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | Trámite Seguro</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="logo-area">
+          <a href="index.html">
+            <img src="./img/logo.png" alt="Logo de la empresa" class="logo" />
+          </a>
+        </div>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="nav-toggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- MENÚ -->
+        <nav class="nav nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="seguridad-privada.html">Seguridad Privada</a>
+          <a href="embarcaciones.html">Embarcaciones</a>
+          <a href="contacto.html" class="active">Contacto</a>
+        </nav>
+
+        <a href="contacto.html" class="btn btn-primary">Iniciar trámite</a>
+      </div>
+    </header>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section contact-section">
+      <div class="container contact-wrapper">
+        <div class="contact-text">
+          <h2>Contactanos</h2>
+          <p>
+            Consultanos sobre trámites de seguridad privada o embarcaciones. Te
+            respondemos a la brevedad.
+          </p>
+
+          <div class="contact-info">
+            <div>
+              <h3>Teléfono / WhatsApp</h3>
+              <p>+54 11 6284-7313</p>
+            </div>
+            <div>
+              <h3>Email</h3>
+              <p>tramiteseguroarg@gmail.com</p>
+            </div>
+            <div>
+              <h3>Horario de atención</h3>
+              <p>Lunes a Viernes de 9 a 18 hs</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMULARIO -->
+        <form
+          action="https://formsubmit.co/tramiteseguroarg@gmail.com"
+          method="POST"
+          class="contact-form"
+        >
+          <!-- Config FormSubmit -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://tramiteseguro.com.ar/contacto.html"
+          />
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nueva consulta desde la web Tramite Seguro"
+          />
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value="¡Gracias por contactarte con Trámite Seguro! Recibimos tu consulta y te vamos a responder a la brevedad."
+          />
+
+          <div class="form-row">
+            <input type="text" name="nombre" placeholder="Nombre" required />
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+
+          <div class="form-row">
+            <input type="text" name="telefono" placeholder="Teléfono" />
+          </div>
+
+          <textarea
+            name="mensaje"
+            placeholder="Escribí tu mensaje..."
+            required
+          ></textarea>
+
+          <button type="submit" class="btn-submit">Enviar consulta</button>
+        </form>
+
+        <div id="form-success" class="success-popup">
+          ¡Muchas gracias! <br />
+          Pronto nos vamos a contactar con vos.
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-modern">
+      <div class="footer-wrapper">
+        <div class="footer-column">
+          <h3>Info</h3>
+          <p><a href="tel:+541162847313">+54 11 6284-7313</a></p>
+          <p>
+            <a href="mailto:tramiteseguroarg@gmail.com"
+              >tramiteseguroarg@gmail.com</a
+            >
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Seguinos</h3>
+          <p>
+            <a
+              href="https://www.instagram.com/tramiteseguroarg/"
+              target="_blank"
+              >Instagram</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Trámite Seguro</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
