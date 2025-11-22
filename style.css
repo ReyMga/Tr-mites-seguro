@@ -144,16 +144,11 @@ a {
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
 }
-/* SOLO afecta a la sección de inicio */
-#inicio.hero {
-  position: relative;
-  min-height: 100vh; /* pantalla completa */
-}
+
 
 #inicio .hero-content {
   position: relative;
   z-index: 1;
-  min-height: 100vh;
   display: flex;
   flex-direction: column; /* título, texto, botones uno debajo del otro */
   justify-content: center; /* centra vertical */
@@ -161,7 +156,6 @@ a {
 }
 /* Centra la tarjeta dentro de la sección Nosotros */
 #nosotros.section {
-  min-height: 100vh;
   display: flex;
   justify-content: center; /* centro horizontal */
   align-items: center; /* centro vertical */
@@ -1551,7 +1545,7 @@ span {
 
   /* Logo un poquito más chico y alineado */
   .logo {
-    height: 50px;
+    height: 70px;
     width: auto;
   }
 
@@ -1648,7 +1642,6 @@ span {
 
   /* --- 2) Hero más centrado y prolijo --- */
   #inicio {
-    min-height: 100vh;
     padding: 130px 1.5rem 3rem; /* espacio para el header + aire abajo */
     display: flex;
     flex-direction: column;
@@ -1972,4 +1965,133 @@ span {
   #inicio.page-section {
     padding-top: 140px !important;
   }
+}
+/* ===== Más espacio debajo del header en la sección Nosotros ===== */
+@media (max-width: 768px) {
+
+  #nosotros.section {
+    padding-top: 160px !important; /* Subí o bajá este número a gusto */
+  }
+
+  /* Opcional: también separo un poco el título */
+  #nosotros h2 {
+    margin-top: 0 !important;
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* Ajustar hero para que arranque más arriba en mobile */
+.hero {
+  padding-top: 40px;          /* antes seguro tenías algo como 120px o más */
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagen de fondo más corta y centrada */
+.hero::before {
+  background-position: center top;
+  background-size: cover;
+  height: 100%;               /* evita que se estire demasiado */
+}
+
+/* Contenedor del texto + botones */
+.hero-content {
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Botones centrados en mobile */
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;        /* CENTRA horizontalmente */
+  width: 100%;
+}
+
+/* Evitar espacios extras en mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 20px;
+  }
+  .hero::before {
+    height: 85vh;             /* recorta la imagen desde arriba */
+  }
+}
+
+/* AJUSTES SOLO PARA MOBILE */
+@media (max-width: 768px) {
+  /* La sección de inicio (hero) un poco más baja en mobile */
+  #inicio.hero {
+    min-height: 75vh;      /* antes seguro estaba en 100vh */
+  }
+
+  .hero-content {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+}
+/* Centrar todo el contenido del HERO */
+.hero-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centrar el párrafo */
+.hero-content p {
+  text-align: center;
+  width: 100%;
+}
+
+/* Contenedor de botones centrado */
+.hero-buttons {
+  display: flex;
+  flex-direction: column;     /* uno abajo del otro en mobile */
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Botones del mismo tamaño */
+.hero-buttons a {
+  width: 220px;               /* mismo ancho para ambos */
+  text-align: center;
+  display: inline-block;
+}
+
+/* En desktop podés ponerlos uno al lado si querés */
+@media (min-width: 769px) {
+  .hero-buttons {
+    flex-direction: row;       /* en fila */
+    justify-content: center;   /* centrados */
+  }
+}
+/* Mismo tamaño y alineación de los botones del hero */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-buttons .btn,
+.hero-buttons .btn-outline {
+  min-width: 230px;      /* mismo ancho */
+  text-align: center;    /* texto centrado */
+  justify-content: center;
 }
